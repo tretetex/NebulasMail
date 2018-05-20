@@ -1,0 +1,265 @@
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(175, 175, 175, 0.555);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+body {
+    background: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* Header */
+
+header {
+    background: #5672a0;
+    color: #F1F1F1;
+    padding: 0 30px;
+    height: 60px;
+}
+
+#logo {
+    color: #e1ecfd;
+    font-size: 18px;
+    text-decoration: none;
+    margin-right: 30px;
+    padding: 3px 10px;
+}
+
+#logo:hover {
+    color: #fff;
+    background-color: #5876a9;
+    border-radius: 3px;
+}
+
+#compose {
+    padding: 5px 30px;
+}
+
+.profile {
+    font-size: 15px;
+}
+
+.profile span {
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+/*  */
+
+.body-content {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: #fff;
+    min-width: 250px;
+    max-width: 250px;
+    border-right: 1px solid #dee2e6;
+    padding: 10px 0;
+    position: relative;
+}
+
+.sidebar footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.sidebar nav a {
+    color: #495057;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 30px;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.sidebar nav a img {
+    margin-right: 20px;
+}
+
+#loadRemoved {
+    padding-left: 26px;
+}
+
+.sidebar nav a:hover {
+    background-color: #f4f7fb;
+    border-color: #0080ff;
+}
+
+.sidebar nav .active {
+    background-color: #f4f7fb;
+    border-color: #0080ff;
+}
+
+.counter {
+    color: #4477cc;
+    background-color: #ececec;
+    border-radius: 50px;
+    padding: 0px 6px;
+}
+
+.sidebar footer .copyright {
+    color: #6c757d;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+/* Messages */
+
+.messages {
+    background-color: #f9f9f9;
+    min-width: 340px;
+    max-width: 340px;
+    border-right: 1px solid #dee2e6;
+    padding: 0px 0;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.messages-img {
+    margin-top: 45px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/mails.svg);
+    background-size: 150px 150px;
+    margin-bottom: 30px;
+}
+
+.messages .message {
+    color: #6c757d;
+    font-size: 12px;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 3px solid transparent;
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.messages .message:hover {
+    background-color: #fff;
+    border-left-color: #ffc107;
+}
+
+.messages .active {
+    background-color: #fff;
+    border-left-color: #ffc107;
+}
+
+.messages .message .title {
+    color: #343a40;
+    font-size: 15px;
+}
+
+.messages .message .from {
+    color: #343a40;
+}
+
+/* Content */
+
+.content {
+    font-size: 14px;
+    max-height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Content compose */
+
+.content .compose {
+    background-color: #fff;
+    width: 100%;
+    padding: 50px 100px;
+}
+
+.content form {
+    max-width: 600px;
+    min-width: 300px;
+    width: 80%;
+}
+
+.content form input {
+    width: 100%;
+}
+
+/* Content about */
+
+.about {
+    padding-top: 100px;
+    color: #90959c;
+    font-size: 14px;
+}
+
+.content .about .mails-img {
+    width: 200px;
+    height: 200px;
+    background: url(../img/main.svg);
+    background-size: 200px 200px;
+    margin-bottom: 30px;
+}
+
+/* Content message */
+
+.content .message {
+    background-color: #fff;
+    width: 100%;
+    padding: 50px 100px;
+}
+
+.content .message .wrapper {
+    max-width: 600px;
+}
+
+.content .message .title {
+    font-size: 28px;
+    font-weight: 300;
+    color: #08c;
+}
+
+.content .message .delete {
+    color: #6aa2d7;
+    font-size: 18px;
+}
+
+.content .message .delete:hover {
+    color: #dc3545;
+}
+
+.content .message .meta {
+    color: #6b6e71;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.content .message .meta .from span {
+    color: #90b7df;
+    font-size: 15px;
+    margin-right: 7px;
+}
+
+.content .message .text {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.content .message form {
+    width: 100%;
+}
