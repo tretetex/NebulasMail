@@ -1,4 +1,4 @@
-const CONTRACT_ADDRESS = "n22SeUb2hezta8Vboooym4VBHHLUSMiVJPe";
+const CONTRACT_ADDRESS = "n1zT969sSsYN8B5grSZ89ZfYpFNBow9HSYD";
 
 class NasMailContractApi extends SmartContractApi {
     constructor(contractAddress) {

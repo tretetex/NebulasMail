@@ -40,15 +40,6 @@ class NasMailContract {
         this.mailCounter = 0;
     }
 
-    getContractWallet() {
-        return "wallet";
-    }
-
-    _isAdminTransaction() {
-        let from = Blockchain.transaction.from;
-        return from === this.getContractWallet();
-    }
-
     markRead(id) {
         let from = Blockchain.transaction.from;
         let mail = this.getById(id);
@@ -77,7 +68,7 @@ class NasMailContract {
         if (!mail) {
             return null;
         }
-        if (mail.from != from && mail.to != from && mail.to != "users-all") {
+        if (mail.from != from && mail.to != from) {
             throw new Error("You can't receive someone else's letters");
         }
 
@@ -95,9 +86,6 @@ class NasMailContract {
         let removedIds = this.removedIds.get(from) || [];
         let mails = [];
 
-        let forAll = this.inputIds.get("users-all") || [];
-        inputIds = inputIds.concat(forAll);
-
         for (let id of inputIds) {
             let mail = this.getById(id);
             let isRemoved = false;
@@ -114,10 +102,6 @@ class NasMailContract {
             }
 
             if (!isRemoved) {
-                if (mail.to == "users-all") {
-                    mail.from = "Nebulas Mail";
-                    mail.to = from;
-                }
                 mails.push(mail);
             }
         }
@@ -199,10 +183,6 @@ class NasMailContract {
         for (let id of ids) {
             let mail = this.mails.get(id);
             if (mail) {
-                if (mail.to == "users-all") {
-                    mail.from = "Nebulas Mail";
-                    mail.to = from;
-                }
                 mails.push(mail);
             }
         }
@@ -224,9 +204,6 @@ class NasMailContract {
         if (!address) {
             throw new Error("The address field is required");
         }
-        if (!this._isAdminTransaction() && address == "users-all") {
-            throw new Error("Access denied: you are not admin");
-        }
 
         let mail = new Mail();
         mail.id = counter;
@@ -240,9 +217,6 @@ class NasMailContract {
             let replyMessage = this.mails.get(replyId);
             mail.replyId = replyId;
 
-            if (replyMessage.to == "users-all") {
-                throw new Error("You can't reply to this email");
-            }
             if (!replyMessage || replyMessage.to != from) {
                 throw new Error("The reply ID must refer to your received message");
             }
