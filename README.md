@@ -1,5 +1,7 @@
 # NebulasMail
 
+![screen](https://github.com/tretetex/NebulasMail/blob/master/img/demo.png?raw=true)
+
 This application allows you to exchange letters with other Nebulas wallet owners.
 Powered by Nebulas.
 
